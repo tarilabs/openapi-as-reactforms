@@ -1,28 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/1.2.2/react-bootstrap.min.js" crossorigin></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
-
-    <script src="https://unpkg.com/@rjsf/core/dist/react-jsonschema-form.js"></script>
-    <script src="https://unpkg.com/swagger-client"></script>
-
-    <script type="text/babel">
-function myOptions() {
-  const options = [
-    {name: 'opt1', descr:'descr1'},
-    {name: 'opt2', descr:'descr2'},
-    {name: 'opt3', descr:'descr3'},
-  ];
-  return options;
-}
+import React from "react";
+import Form from "@rjsf/core"
+import SwaggerClient from "swagger-client"
 
 async function schemaOptions(openapiURL){
   const a = await new SwaggerClient(openapiURL);
@@ -36,8 +14,6 @@ async function schemaOptions(openapiURL){
   }
   return res;    
 }
-
-const Form = JSONSchemaForm.default;
 
 class MyOpenAPIForm extends React.Component {
   constructor(props) {
@@ -56,7 +32,6 @@ class MyOpenAPIForm extends React.Component {
 
     this.handleOpenAPIURLChange = this.handleOpenAPIURLChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleForm = this.handleForm.bind(this);
     this.handleFormChange = this.handleFormChange.bind(this);
     this.refreshSchemasFromOpenapiURL(this.state.openapiURL);
@@ -75,11 +50,6 @@ class MyOpenAPIForm extends React.Component {
   refreshSchemasFromOpenapiURL(openapiURL) {
     schemaOptions(openapiURL).then(x => this.setState({schemas: x, selected: x[0]}),
                                err => this.setState({schemas: [], selected: { url : "Invalid openAPI url", schema: { "title": "Please enter a valid openapi URL", "type": "object" } } }));
-  }
-
-  handleSubmit(event) {
-    alert('Your favorite flavor is: ' + JSON.stringify(this.state.selected));
-    event.preventDefault();
   }
 
   handleFormChange(a) {
@@ -157,23 +127,4 @@ class MyOpenAPIForm extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <MyOpenAPIForm />,
-  document.getElementById('rrr')
-);
-      </script>
-
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-      Demo system
-      </a>
-    </nav>
-    <div class="container" id="rrr"></div>
-
-    
-  </body>
-</html>
+export default MyOpenAPIForm;
