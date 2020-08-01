@@ -49,7 +49,7 @@ class MyOpenAPIForm extends React.Component {
 
   refreshSchemasFromOpenapiURL(openapiURL) {
     schemaOptions(openapiURL).then(x => this.setState({schemas: x, selected: x[0]}),
-                               err => this.setState({schemas: [], selected: { url : "Invalid openAPI url", schema: { "title": "Please enter a valid openapi URL", "type": "object" } } }));
+                                   err => this.setState({schemas: [], selected: { url : "Invalid_openAPI_url", schema: { "title": "Please enter a valid openapi URL", "type": "object" } } }));
   }
 
   handleFormChange(a) {
@@ -105,7 +105,9 @@ class MyOpenAPIForm extends React.Component {
   </div>
 </div>
 </div>
+
 <hr />
+
 <div className="row">
 <div className="col">
   <Form schema={this.state.selected.schema} onSubmit={this.handleForm} onChange={this.handleFormChange} formData={this.state.requestPayload} />
