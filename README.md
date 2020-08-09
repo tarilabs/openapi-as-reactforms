@@ -1,6 +1,17 @@
-# empty-project
+A generic bundled spa in React, which introspects Swagger OpenAPI definitions file, to build automatically html forms (bootstrap4) for POST endpoints exchanging JSON
 
-Empty project.
+GOALs:
+- build automatically an html form, by introspecting Swagger OpenAPI definitions file
+- the introspection works at runtime, not at `npm` build time
+
+non-GOALS:
+- not a "low-code" app generator
+
+# DEMO
+
+Watch the video on YouTube:
+
+[![Watch the video](https://img.youtube.com/vi/av_DoGNl2jI/hqdefault.jpg)](https://youtu.be/av_DoGNl2jI)
 
 ## Building and running on localhost
 
