@@ -1,6 +1,10 @@
 import React from "react";
-import Form from "@rjsf/core"
-import SwaggerClient from "swagger-client"
+import SwaggerClient from "swagger-client";
+
+import { withTheme } from '@rjsf/core';
+import { Theme as Bootstrap4Theme } from '@rjsf/bootstrap-4';
+
+const Form = withTheme(Bootstrap4Theme);
 
 async function schemaOptions(openapiURL){
   const a = await new SwaggerClient(openapiURL);
@@ -38,7 +42,7 @@ class MyOpenAPIForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({selected: this.state.schemas.find(x => x.url === event.target.value)});
+    this.setState({selected: this.state.schemas.find(x => x.url === event.target.value), requestPayload : {}, responsePayload : "(nothing yet.)"});
   }
 
   handleOpenAPIURLChange(event) {
@@ -48,7 +52,7 @@ class MyOpenAPIForm extends React.Component {
   }
 
   refreshSchemasFromOpenapiURL(openapiURL) {
-    schemaOptions(openapiURL).then(x => this.setState({schemas: x, selected: x[0]}),
+    schemaOptions(openapiURL).then(x => this.setState({schemas: x, selected: x[0], requestPayload : {}, responsePayload : "(nothing yet.)"}),
                                    err => this.setState({schemas: [], selected: { url : "Invalid_openAPI_url", schema: { "title": "Please enter a valid openapi URL", "type": "object" } } }));
   }
 
