@@ -20,6 +20,7 @@
     "swagger-client": "^3.10.12"
   },
   "devDependencies": {
+    "lock-treatment-tool": "^0.4.1",
     "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12",
     "@babel/preset-react": "^7.10.4",
