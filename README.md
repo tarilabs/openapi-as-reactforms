@@ -36,3 +36,22 @@ npm run build-dev
 ## Running
 
 Open the file `dist/index.html` in your browser
+
+## Deploying on Quarkus:
+
+Add to Quarkus app `pom.xml` this project and webjars-locator dependencies:
+
+```
+<dependency>
+    <groupId>org.kie</groupId>
+    <artifactId>openapi-as-reactforms</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-webjars-locator</artifactId>
+</dependency>
+```
+
+Can now navigate to `http://localhost:8080/openapi-as-reactforms/index.html`.
