@@ -54,4 +54,4 @@ Add to Quarkus app `pom.xml` this project and webjars-locator dependencies:
 </dependency>
 ```
 
-Can now navigate to `http://localhost:8080/openapi-as-reactforms/index.html`.
+Can now navigate to `http://localhost:8080/webjars/openapi-as-reactforms/index.html`.
