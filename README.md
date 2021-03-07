@@ -1,4 +1,4 @@
-Archived in favour of SmallRye io.smallrye: smallrye-open-api-ui-forms see https://github.com/smallrye/smallrye-open-api/tree/master/ui/open-api-ui-forms
+Archived in favour of SmallRye `io.smallrye:smallrye-open-api-ui-forms` see https://github.com/smallrye/smallrye-open-api/tree/master/ui/open-api-ui-forms
 
 ---
 
