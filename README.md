@@ -1,3 +1,7 @@
+Archived in favour of SmallRye io.smallrye: smallrye-open-api-ui-forms see https://github.com/smallrye/smallrye-open-api/tree/master/ui/open-api-ui-forms
+
+---
+
 A generic bundled spa in React, which introspects Swagger OpenAPI definitions file, to build automatically html forms (bootstrap4) for POST endpoints exchanging JSON
 
 GOALs:
